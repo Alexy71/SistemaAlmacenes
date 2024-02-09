@@ -1,0 +1,19 @@
+{% extends "layout.html"%}
+ {% block content %}
+<div class="content">
+    <form id="content-form" method="POST" action="javascript:despacho()" class="d-flex">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <div class="content-form">
+            {{render_field(form.nombre_despachante)}}
+            {{render_field(form.ci_despachante)}}
+        </div>
+        <div class="content-form">
+            <input class="form-control me-2" type="number" placeholder="Search" aria-label="Search", name="searched" id="form-despacho-search" required/>
+            <button class="btn btn-outline-secondary" type="submit">Buscar id</button>
+        </div>
+        
+    </form>
+
+    <div id="busquedas"></div>
+</div>
+{% endblock %}

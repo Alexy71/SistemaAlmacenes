@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form_solicitud.css') }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</head>
+<body>
+    <header class="start-page">
+        <h1 id="title">Bienvenido {{current_user.nombres}}</h1>
+        <p id="description">Recordarle que pedidos exagerados seran rechazados :)</p>
+    </header>
+    <form method="post" id="survey-form">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <div class="basic-information">
+            <div class="form-title">
+                <label for="form-title">Titulo</label>
+                <input type="text" min="4" max="20" id="form-title" placeholder="Eg: lapiceros para viajes">
+            </div>
+            <div class="div-imgstp">
+                {%for tipo_producto in tipo_productos%}
+                    <figure class="imgs-tp"  onclick="solicitar_productos('{{tipo_producto.id}}','{{tipo_producto.nombre}}')">
+                        <img src="{{url_for('static', filename='images/pregunta.jpg')}}" alt="{{tipo_producto.nombre}}">
+                        <figcaption>{{tipo_producto.nombre}}</figcaption>
+                    </figure>
+                    
+                {%endfor%}
+                <div id="productos">
+
+                </div>
+            </div>
+        </div>
+    </form>    
+</body>
+</html>

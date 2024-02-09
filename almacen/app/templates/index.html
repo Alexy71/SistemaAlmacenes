@@ -1,0 +1,183 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+<main>
+<br>
+<!--CARROUSELL-->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img class="d-block w-100" src="static/images/carrousel1.jpg" height="550 ">
+            <div class="carousel-caption d-none d-md-block ">
+                <h4>
+                    <i>Contamos con un amplio espacio para la maquinaria</i>
+                </h4>
+            </div>
+        </div>
+        <div class="carousel-item " data-bs-interval="2000 ">
+            <img class="d-block w-100 " src="static/images/carrousel2.jpg " height="550 ">
+            <div class="carousel-caption d-none d-md-block ">
+                <h4>
+                    <i> Zona VIP para clientes exclusivos</i>
+                </h4>
+            </div>
+        </div>
+        <div class="carousel-item ">
+            <img class="d-block w-100 " src="static/images/carrousel3.jpg " height="550 ">
+            <div class="carousel-caption d-none d-md-block ">
+                <h4><i> Ambientes de distintos tamaños</i></h4>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev " type="button " data-bs-target="#carouselExampleDark " data-bs-slide="prev ">
+      <span class="carousel-control-prev-icon " aria-hidden="true "></span>
+      <span class="visually-hidden ">Previous</span>
+    </button>
+    <button class="carousel-control-next " type="button " data-bs-target="#carouselExampleDark " data-bs-slide="next ">
+      <span class="carousel-control-next-icon " aria-hidden="true "></span>
+      <span class="visually-hidden ">Next</span>
+    </button>
+</div>
+<br> <br>
+
+<!--bodegas-->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/bodega1.jpg" class="card-img-top" alt="..." width="200" height="350">
+            <div class="card-body">
+                <h5 class="card-title">20 Bodegas industriales</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/bodega2.jpg" class="card-img-top" alt="..." width="200" height="350">
+            <div class="card-body">
+                <h5 class="card-title">30 bodegas pymes</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/bodega3.jpg" class="card-img-top" alt="..." width="200" height="350">
+            <div class="card-body">
+                <h5 class="card-title">100 bodegas personales</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<!--Quienes somos-->
+<hr class="featurette-divider ">
+<div class="row featurette ">
+    <div class="col-md-7 ">
+        <h2 class="featurette-heading fw-normal lh-1 "> Quienes somos<span class="text-muted "></span></h2>
+        <br>
+        <p class="lead ">
+            Somos una empresa que busca ser líder en almacenaje industrial así como personal. Es por eso que escogimos una zona estratégica para ubicarnos, cerca de todos los parques industriales de la zona norte de Santa Cruz y cerca de miles de habitantes cruceños.
+            Queremos ofrecer a las personas y empresas que nos contratan, seguridad y comodidad absoluta en sus bienes almacenados.
+        </p>
+        <br>
+        <p class="lead ">
+            <h3><i>“Deseamos Ser el primer referente de la industria del auto almacenaje en Bolivia marcando la pauta en innovación, calidad y servicio “</i></b3>
+        </p>
+    </div>
+    <div class="col-md-5 ">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto " width="1000 " height="30 " role="img " aria-label="Placeholder: 500x500 " preserveAspectRatio="xMidYMid
+     slice " focusable="false ">
+     <img src="static/images/quienes_somos.jpg" alt="quienes_somos.jpg" width="550" height="550">
+     </svg>
+    </div>
+</div>
+<br><br>
+
+<!--Obj y politicas-->
+<hr class="featurette-divider ">
+<div class="row featurette ">
+    <div class="col-md-5 ">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto " width="1000 " height="30 " role="img " aria-label="Placeholder: 500x500 " preserveAspectRatio="xMidYMid
+        slice " focusable="false ">
+        <img src="static/images/politica.jpg" alt="politica" width="500" height="300">
+        </svg>
+    </div>
+    <div class="col-md-7 ">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <br><br><br>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Objetivos de calidad
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">establece anualmente objetivos alineados con los planes estrategicos definidos en el PAA de cada gestion y la medicion de los mismos es una labor permanente, mediante la herramienta de mejora continua denominada "BIT (Business
+                        Intelligence Tools)".La politica de la calidad y sus objetivos, deben ser revisados por la Alta Direccion en forma anual, para establecer su correcto encaminamiento y cumplimiento.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Politicas de Calidad
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"> se ha tomado conciencia de que la calidad es cuestión de supervivencia y mantenerla con éxito es una estrategia de vitalidad a largo plazo en busca de mejorar la calidad de vida, de trabajo, de personas y de la organización. La
+                        política de la calidad de ALBO S.A. es simple: "Hacer bien el trabajo a la primera vez y mejorarlo continuamente"</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--ventajas-->
+<hr class="featurette-divider ">
+<div class="row featurette ">
+    <div class="col-md-7 ">
+        <br><br> <br><br>        
+            <ul class="list-group">
+                <li class="list-group-item">Contamos con herramientas profesionales para facilitar la carga y traslado de objetos</li>
+                <li class="list-group-item">Apoyo logistico</li>
+                <li class="list-group-item">Camara las 24 horas del dia</li>
+                <li class="list-group-item">Ubicacion encentrica dentro de la Ciudad</li>
+                <li class="list-group-item">Sala de reuniones para nuestros clientes</li>
+            </ul>
+            
+    </div>
+    <div class="col-md-5 ">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto " width="1000 " height="30 " role="img " aria-label="Placeholder: 500x500 " preserveAspectRatio="xMidYMid
+        slice " focusable="false ">
+        <img src="static/images/ventajas.jpg" alt="ventajas" width="550" height="450">
+        </svg>
+    </div>
+</div>
+<br><br>
+    <!-- FOOTER -->
+    <div class="container">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <p class="col-md-4 mb-0 text-muted">&copy; 2022 Company, Inc</p>
+          
+              <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+              </a>
+          
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+              </ul>
+            </footer>
+        </div>
+     
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "auth_layout.html"%} 
+{% from "helpers/_forms.html" import render_field %} 
+
+{% block container %}
+<form method="post" class="form">
+  <h3>Registro</h3>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  {{ render_field(form.honeypot) }}
+  <div class="med_cont">
+    {{ render_field(form.nombres, class="form-control", placeholder="Nombres")
+    }}
+  </div>
+  <div class="med_cont">
+    {{ render_field(form.apellidos, class="form-control",
+    placeholder="Apellidos") }}
+  </div>
+
+  <div class="med_cont">
+    {{ render_field(form.email, class="form-control", placeholder="Email") }}
+  </div>
+  <div class="med_cont">
+    {{ render_field(form.celular, class="form-control", placeholder="Celular")
+    }}
+  </div>
+  <div class="med_cont">
+    {{ render_field(form.contrasena, class="form-control",
+    placeholder="Contrasena") }}
+  </div>
+  <div class="med_cont">
+    {{ render_field(form.confirm_contrasena, class="form-control",
+    placeholder="confirmar contrasena") }}
+  </div>
+  <div class="tres_cuartos">
+    {{ render_field(form.nivel, class="form-control", placeholder="Nivel") }}
+  </div>
+  <div class="octavo_cont">
+    {{ render_field(form.ci, class="form-control", placeholder="CI") }}
+  </div>
+
+  <div class="full_content">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a
+      class="btn btn-secondary"
+      role="button"
+      aria-disabled="true"
+      href="{{url_for('.login')}}"
+      >Login
+    </a>
+  </div>
+</form>
+{% endblock %}

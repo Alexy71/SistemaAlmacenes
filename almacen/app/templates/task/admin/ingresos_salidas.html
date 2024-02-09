@@ -1,0 +1,42 @@
+{% extends "layout.html"%}
+
+{% block content %}
+
+<div class="content">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre despachante</th>
+            <th scope="col">CI</th>
+            <th scope="col">Fecha de solicitud</th>
+            <th scope="col">Fecha de despacho</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for salida, solicitud,solicitudD in salidas %}
+                <tr>
+                    <th>{{salida.nombre_despachante}}</th>
+                    <td>{{salida.ci}}</td>
+                    <td>{{solicitud.fecha}}</td>
+                    <td>{{salida.fecha}}</td>
+                    <td>{{solicitud.titulo}}</td>
+                    <td>{{solicitudD.cantidad}}</td>
+                    {%if solicitudD.estado == 'R' %}
+                    <td>Rechazado</td>
+                    {%elif solicitudD.estado == 'A' %}
+                    <td>aceptado</td>
+                    {%elif solicitudD.estado == 'P' %}
+                    <td>pendiente</td>
+                    {%elif solicitudD.estado == 'D' %}
+                    <td>Despachado</td>
+                    {%endif%}
+                </tr>
+                {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}

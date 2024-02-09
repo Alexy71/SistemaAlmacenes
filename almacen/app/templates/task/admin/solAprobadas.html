@@ -1,0 +1,145 @@
+{% extends "layout.html"%}
+
+{% block content %}
+<br><br>
+<center><h5>Despachados</h5></center>
+<br><br>
+<div class="row row-cols-1 row-cols-md-2 g-4" style="width: 75rem;margin-left: auto;margin-right: auto;">
+  {%for solicitudD, solicitud, producto in solicitud_detalle:%}
+  {%if solicitudD.estado == 'D'%}
+  <div class="col">
+    <div class="card h-100">
+      <h5 class="card-title">{{solicitud.titulo}}</h5>
+      <p class="card-text">{{solicitudD.observaciones}}</p>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Productos requeridos
+            <span class="badge bg-primary rounded-pill">{{solicitudD.cantidad}}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Productos en almacen
+            <span class="badge bg-primary rounded-pill">{{producto.stock}}</span>
+          </li>
+          {% if  producto.stock - solicitudD.cantidad < 0 %}
+          <li style="background-color: red;" class="list-group-item d-flex justify-content-between align-items-center">
+              Restante
+              <span class="badge bg-primary rounded-pill">{{producto.stock - solicitudD.cantidad}}</span>
+            </li>           
+          {% else %}
+          <li style="background-color: greenyellow;" class="list-group-item d-flex justify-content-between align-items-center">
+              Restante
+              <span class="badge bg-primary rounded-pill">{{producto.stock - solicitudD.cantidad}}</span>
+            </li>
+          {% endif %}
+          
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a class="btn btn-danger" role="button" aria-disabled="true" 
+        href="{{url_for('.ingreso', id=solicitudD.id)}}">Solicitar producto</a>
+      </div>
+    </div>
+  </div>
+  {%endif%}
+  {%endfor%}
+</div>
+<br><br>
+
+<center><h5>Solicitudes pendientes</h5></center>
+<br><br>
+<div class="row row-cols-1 row-cols-md-2 g-4" style="width: 75rem;margin-left: auto;margin-right: auto;">
+  {%for solicitudD, solicitud, producto in solicitud_detalle:%}
+  {% if solicitudD.estado == 'P' %}
+  <div class="col">
+    <div class="card h-100">
+      <h5 class="card-title">{{solicitud.titulo}}</h5>
+      <p class="card-text">{{solicitudD.observaciones}}</p>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Productos requeridos
+            <span class="badge bg-primary rounded-pill">{{solicitudD.cantidad}}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Productos en almacen
+            <span class="badge bg-primary rounded-pill">{{producto.stock}}</span>
+          </li>
+          {% if  producto.stock - solicitudD.cantidad < 0 %}
+          <li style="background-color: red;" class="list-group-item d-flex justify-content-between align-items-center">
+              Restante
+              <span class="badge bg-primary rounded-pill">{{producto.stock - solicitudD.cantidad}}</span>
+            </li>           
+          {% else %}
+          <li style="background-color: greenyellow;" class="list-group-item d-flex justify-content-between align-items-center">
+              Restante
+              <span class="badge bg-primary rounded-pill">{{producto.stock - solicitudD.cantidad}}</span>
+            </li>
+          {% endif %}
+          
+        </ul>
+      </div>
+      <div class="card-footer">
+            <div class="card-body">
+                <a class="btn btn-secondary" role="button" aria-disabled="true" 
+                href="{{url_for('.solicitudes', id=solicitudD.id, ope='a')}}">Aceptar</a>
+                
+                <a class="btn btn-danger" role="button" aria-disabled="true" 
+                href="{{url_for('.solicitudes', id=solicitudD.id, ope='r')}}">Rechazar</a>
+                <a class="btn btn-danger" role="button" aria-disabled="true" 
+                href="{{url_for('.ingreso', id=solicitudD.id)}}">Solicitar producto</a>
+            </div>
+      </div>
+    </div>
+  </div>
+  {%endif%}
+  {%endfor%}
+</div>
+</div>
+
+
+  <br><br><br>
+  <center><h5>Solicitudes aceptadas</h5></center>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-2 g-4" style="width: 75rem;margin-left: auto;margin-right: auto;">
+    {%for solicitudD, solicitud, producto in solicitud_detalle:%}
+    {% if solicitudD.estado == 'A'%}
+    <div class="col">
+      <div class="card h-100">
+        <h5 class="card-title">{{solicitud.titulo}}</h5>
+        <p class="card-text">{{solicitudD.observaciones}}</p>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Productos requeridos
+              <span class="badge bg-primary rounded-pill">{{solicitudD.cantidad}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Productos en almacen
+              <span class="badge bg-primary rounded-pill">{{producto.stock}}</span>
+            </li>
+            {% if  producto.stock - solicitudD.cantidad < 0 %}
+            <li style="background-color: red;" class="list-group-item d-flex justify-content-between align-items-center">
+                Restante
+                <span class="badge bg-primary rounded-pill">{{producto.stock - solicitudD.cantidad}}</span>
+              </li>           
+            {% else %}
+            <li style="background-color: greenyellow;" class="list-group-item d-flex justify-content-between align-items-center">
+                Restante
+                <span class="badge bg-primary rounded-pill">{{producto.stock - solicitudD.cantidad}}</span>
+              </li>
+            {% endif %}
+            
+          </ul>
+        </div>
+        <div class="card-footer">
+              <label for="date">Programar fecha</label>
+              <input id="date" type="date">
+        </div>
+      </div>
+    </div>
+    {%endif%}
+    {%endfor%}
+  </div>
+</div>
+{%endblock%}

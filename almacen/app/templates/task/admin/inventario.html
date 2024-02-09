@@ -1,0 +1,47 @@
+{% extends "layout.html"%}
+ {% block content %}
+<div class="content">
+    <form method="post" class="d-flex"  id="form_categorias">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">    
+        <div class="categorias">
+            {{render_field(form.categoria)}}
+        </div>
+        
+        <div class="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search", name="searched"/>
+            <button class="btn btn-outline-secondary" type="submit">Search</button>    
+        </div>
+    </form>
+
+    <div id="productos">
+    {%for tipo_producto in tipo_productos %}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="5" style="text-align: center">{{tipo_producto.nombre}}</th>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in _productos%} 
+            {% if producto.id_tipo_producto == tipo_producto.id %}
+            <tr>
+                <th scope="row">{{producto.id}}</th>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.descripcion}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.stock}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %} 
+    </div>
+</div>
+{% endblock %}

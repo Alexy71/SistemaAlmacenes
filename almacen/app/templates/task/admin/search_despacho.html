@@ -1,0 +1,33 @@
+<br/>
+<br/>
+	{% if solicirudD.count() > 0 %}
+    <h2>Estas buscando por el ID: <em>{{ searched }}</em></h2>
+    <div id="title-despacho">
+        <h3>Titulo de solicitud: <br> <span>{{titulo_solicitud}}</span> </h3>
+        <a href="javascript:despachar_todo()" 
+        class="btn btn-outline-primary btn-sm">Despachar Todo</a>
+    </div>
+    <div class="shadow p-3 rounded target-despacho">
+    {% for solicitudD, solicitud, producto in  solicirudD %}
+        <div class="shadow p-3 bg-body rounded">
+            <figure class="imgs-tp">
+                <img src="{{url_for('static', filename='images/pregunta.jpg')}}" 
+                alt="{{solicitud.titulo}}">
+            </figure>
+            <p>Producto: {{ producto.nombre }}</p>
+            <small><br/>Cantidad: {{ solicitudD.cantidad }}<br/>
+            Observaciones: {{solicitudD.observaciones}}</small>
+            <br>
+            <a id="{{solicitudD.id}}" href="javascript:despachar('{{solicitud.id}}','{{solicitudD.id}}')" 
+            class="btn btn-outline-secondary btn-sm">Despachar</a>
+        </div>
+	{% endfor %}
+    </div>
+	{% else %}
+    <strong>{{ searched }}</strong> no se encontro...
+    <p>Puede que: </p>
+        <ol>
+            <li>Ya haya sido retirada</li>
+            <li>Numero equivocado</li>
+        </ol>
+	{% endif %}

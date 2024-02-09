@@ -1,0 +1,42 @@
+{% extends "layout.html"%}
+
+{% block content %}
+<div class="content">
+    {%for  solicitudD, solicitud, producto in salidas:%}
+    <div class="card border-primary" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{solicitud.titulo}}</h5>
+          <p class="card-text">{{producto.descripcion}}</p>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            cantidad
+            <span class="badge bg-primary rounded-pill">{{solicitudD.cantidad}}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            fecha
+            <span class="badge bg-primary rounded-pill">{{solicitud.fecha}}</span>
+          </li>           
+        </ul>
+        {% if solicitudD.estado == 'A'%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Su producto llegara en la fecha:
+            <span class="badge bg-primary rounded-pill">{{solicitud.fecha}}</span>
+        </li>
+        {% endif %}
+        {%if solicitudD.estado == 'D'%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Solicitud rechazada
+        </li>
+        {%endif%}
+        {% if solicitudD.estado == 'P' %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            En Observacion
+          </li>
+        {% endif %}
+      </div>
+      <br>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

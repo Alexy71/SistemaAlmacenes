@@ -1,0 +1,30 @@
+{% extends "layout.html"%} {%block container%} <br /><br />
+<form class="row g-3" method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  {{ render_field(form.honeypot) }}
+
+  <div class="col-md-4">
+    {{ render_field(form.producto, class="form-control")}}
+  </div>
+  <div class="col-md-4">
+    {{ render_field(form.cantidad, class="form-control")}}
+  </div>
+
+  <div class="col-md-6">
+    {{ render_field(form.descripcion, class="form-control")}}
+  </div>
+
+  <div class="col-md-3">
+    {{ render_field(form.precio_unitario, class="form-control")}}
+  </div>
+  <div class="col-md-4">
+    {{ render_field(form.precio_total, class="form-control")}}
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </div>
+</form>
+
+
+{%endblock%}

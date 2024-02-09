@@ -1,0 +1,270 @@
+:root {
+    --yellow-color: #FFCE3E;
+    --gray-color: #F2F2F2;
+    --light-gray: #d6d6d6ff;
+    --aureolin: #ffee32ff;
+    --cyber-yellow: #ffd100ff;
+    --eerie-black: #202020ff;
+    --jet: #333533ff;
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #CADCE9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.full_content {
+    width: 90%;
+    display: inline-block;
+}
+
+.med_cont {
+    width: 45%;
+    display: inline-block;
+}
+
+.tres_cuartos {
+    display: inline-block;
+    width: 70%;
+}
+
+.octavo_cont {
+    width: 20%;
+    display: inline-block;
+}
+
+
+/* nav */
+
+#nav {
+    width: 100%;
+    background-color: var(--light-gray);
+    box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.3);
+    text-transform: capitalize;
+}
+
+.icon {
+    height: 100%;
+    width: 8rem;
+}
+
+.anchor-img {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav li>a {
+    color: var(--jet);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 2rem;
+}
+
+.navbar-nav li:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+.navbar-nav li>a:hover {
+    text-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.3);
+    padding: 0.3rem;
+    color: var(--aureolin);
+}
+
+.content {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.content-form {
+    width: 45%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#content-form {
+    margin-top: 2rem;
+    padding: 0.5rem;
+    box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.categorias {
+    width: 50%;
+}
+
+#form_categorias {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#categoria {
+    list-style: none;
+    margin: 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+#categoria li {
+    width: 42%;
+    display: inline-block;
+}
+
+.search {
+    display: flex;
+    width: 40%;
+    gap: 2rem;
+}
+
+.carousel {
+    margin-bottom: 4rem;
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+.carousel-item {
+    height: 32rem;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
+
+.featurette-divider {
+    margin: 5rem 0;
+}
+
+.featurette-heading {
+    letter-spacing: -.05rem;
+}
+
+@media (min-width: 40em) {
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+.content-form input,
+select,
+option {
+    width: 98%;
+    height: 2rem;
+    margin-bottom: 0.4rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
+}
+
+.content-form button {
+    width: 80%;
+    margin: auto;
+    border-radius: 1rem;
+    border-color: blue;
+    margin-top: 0.5rem;
+}
+
+.content-form label {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 0.1rem;
+    font-size: 1.125rem;
+}
+
+.imgs-tp {
+    width: 22%;
+    border-radius: 0.5rem;
+    background-color: var(--color-darkblue);
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.imgs-tp img {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.imgs-tp a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.target-despacho {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.target-despacho div {
+    max-width: 50%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#title-despacho {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#title-despacho h3>span {
+    text-transform: uppercase;
+    font-weight: 900;
+}
